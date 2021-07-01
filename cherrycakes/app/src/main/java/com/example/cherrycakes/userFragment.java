@@ -16,7 +16,6 @@ public class userFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        view = inflater.inflate(R.layout.fragment_user, container, false);
-        return view;
+        return inflater.inflate(R.layout.fragment_user, container, false);
     }
 }
