@@ -32,7 +32,6 @@ public class welcomeActivity extends AppCompatActivity {
     ImageView google;
     private GoogleSignInClient mGoogleSignInClient;
     private final static int RC_SIGN_IN = 123;
-    Button verify;
     private FirebaseAuth mAuth;
 
     @Override

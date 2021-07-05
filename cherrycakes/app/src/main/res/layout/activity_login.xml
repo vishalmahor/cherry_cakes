@@ -10,7 +10,7 @@
         android:id="@+id/imageView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@drawable/ui"
+        android:background="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -39,10 +39,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView2"
-        app:layout_constraintVertical_bias="0.1" />
+        app:layout_constraintVertical_bias="0" />
 
     <EditText
-        android:id="@+id/txt_username"
+        android:id="@+id/txt_emails"
         android:layout_width="350dp"
         android:layout_height="50dp"
         android:background="@drawable/sp"
@@ -58,7 +58,7 @@
         app:layout_constraintVertical_bias="0.1" />
 
     <EditText
-        android:id="@+id/txt_password"
+        android:id="@+id/txt_passwords"
         android:layout_width="350dp"
         android:layout_height="50dp"
         android:background="@drawable/sp"
@@ -70,7 +70,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.491"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txt_username"
+        app:layout_constraintTop_toBottomOf="@+id/txt_emails"
         app:layout_constraintVertical_bias="0.054" />
 
     <TextView
@@ -83,11 +83,11 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.895"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txt_password"
+        app:layout_constraintTop_toBottomOf="@+id/txt_passwords"
         app:layout_constraintVertical_bias="0.045" />
 
     <Button
-        android:id="@+id/btnlogin"
+        android:id="@+id/btn_login"
         android:layout_width="200dp"
         android:layout_height="50dp"
         android:text="Login"
@@ -101,6 +101,7 @@
         app:layout_constraintVertical_bias="0.179" />
 
     <TextView
+        android:id="@+id/go_to_register"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="New User? Register Now."
@@ -109,6 +110,6 @@
         app:layout_constraintBottom_toBottomOf="@+id/imageView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnlogin" />
+        app:layout_constraintTop_toBottomOf="@+id/btn_login" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

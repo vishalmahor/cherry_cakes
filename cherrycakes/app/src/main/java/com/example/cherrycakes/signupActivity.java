@@ -9,6 +9,7 @@ import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -22,6 +23,7 @@ public class signupActivity extends AppCompatActivity {
     Button register;
     EditText email, password, cpassword;
     TextView go_to_login;
+    ImageView imageView;
     private FirebaseAuth firebaseAuth;
 
     @Override
@@ -34,6 +36,15 @@ public class signupActivity extends AppCompatActivity {
         password = findViewById(R.id.txt_password);
         cpassword = findViewById(R.id.txt_cpassword);
         go_to_login = findViewById(R.id.go_to_login);
+        imageView = findViewById(R.id.imageView2);
+
+        imageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(signupActivity.this, phoneActivity.class);
+                startActivity(intent);
+            }
+        });
 
         firebaseAuth = FirebaseAuth.getInstance();
 
@@ -80,6 +91,8 @@ public class signupActivity extends AppCompatActivity {
                                 }
                             });
 
+                }else{
+                    Toast.makeText(signupActivity.this, "Password Not Match", Toast.LENGTH_SHORT).show();
                 }
 
             }

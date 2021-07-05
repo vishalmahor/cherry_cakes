@@ -23,8 +23,8 @@ public class HeaderActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_header);
 
-        name = findViewById(R.id.name);
-        mail = findViewById(R.id.email);
+        name = findViewById(R.id.header_name);
+        mail = findViewById(R.id.header_email);
         imageView = findViewById(R.id.image);
         firebaseAuth = FirebaseAuth.getInstance();
 

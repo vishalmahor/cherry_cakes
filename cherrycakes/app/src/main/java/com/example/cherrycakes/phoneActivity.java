@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Spinner;
 
 public class phoneActivity extends AppCompatActivity {
@@ -15,6 +16,7 @@ public class phoneActivity extends AppCompatActivity {
 
     Spinner spin;
     Button generate;
+    EditText phone_no;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,13 +25,19 @@ public class phoneActivity extends AppCompatActivity {
 
         spin = findViewById(R.id.spin);
         generate = findViewById(R.id.generate);
+        phone_no = findViewById(R.id.number);
+
+
 
         generate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(phoneActivity.this, OTPActivity.class);
+
+                String mobileNo = phone_no.getText().toString();
+
+                Intent intent = new Intent(getApplicationContext(), OTPActivity.class);
+                intent.putExtra("PhoneNo", mobileNo);
                 startActivity(intent);
-                finish();
             }
         });
 
