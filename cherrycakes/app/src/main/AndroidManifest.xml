@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.cherrycakes">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -11,7 +11,18 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Cherrycakes">
-        <activity android:name=".homeActivity"></activity>
+        <activity android:name=".locationActivity"></activity>
+        <activity android:name=".item_details_Activity" />
+        <activity android:name=".fruit_cake_Activity" />
+        <activity android:name=".sponge_cake_Activity" />
+        <activity android:name=".Red_velvet_cake_Activity" />
+        <activity android:name=".customize_cakes_Activity" />
+        <activity android:name=".photo_cake_Activity" />
+        <activity android:name=".Chocolate_Activity" />
+        <activity android:name=".square_cakes_Activity" />
+        <activity android:name=".Heart_cakes_Activity" />
+        <activity android:name=".RoundcakesActivity" />
+        <activity android:name=".homeActivity" />
         <activity android:name=".OTPActivity" />
         <activity android:name=".phoneActivity" />
         <activity android:name=".signupActivity" />

@@ -25,4 +25,8 @@
         <item name="itemBackground">@color/blue_sapphire</item>
     </style>
 
+    <style name="search_view">
+        <item name="android:textColor">@color/black</item>
+    </style>
+
 </resources>

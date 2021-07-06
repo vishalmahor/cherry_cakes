@@ -10,74 +10,25 @@
             android:id="@+id/search"
             android:icon="@drawable/ic_baseline_search_24"
             android:title="Search" />
+        <item
+            android:id="@+id/cart"
+            android:icon="@drawable/ic_baseline_shopping_cart_24"
+            android:title="My Cart" />
+        <item
+            android:id="@+id/favourate"
+            android:icon="@drawable/ic_baseline_person_24"
+            android:title="Favourate Items" />
+        <item
+            android:id="@+id/notification"
+            android:icon="@drawable/ic_baseline_person_24"
+            android:title="My message" />
+        <item
+            android:id="@+id/account"
+            android:icon="@drawable/ic_baseline_notifications_active_24"
+            android:title="My Profile" />
+        <item
+            android:id="@+id/exit"
+            android:icon="@drawable/ic_baseline_login_24"
+            android:title="Logout" />
     </group>
-
-    <item android:title="Personal">
-        <menu>
-            <group android:checkableBehavior="single">
-                <item
-                    android:id="@+id/cart"
-                    android:icon="@drawable/ic_baseline_shopping_cart_24"
-                    android:title="My Cart" />
-                <item
-                    android:id="@+id/favourate"
-                    android:icon="@drawable/ic_baseline_person_24"
-                    android:title="Favourate Items" />
-                <item
-                    android:id="@+id/notification"
-                    android:icon="@drawable/ic_baseline_person_24"
-                    android:title="My message" />
-                <item
-                    android:id="@+id/account"
-                    android:icon="@drawable/ic_baseline_notifications_active_24"
-                    android:title="My Profile" />
-                <item
-                    android:id="@+id/exit"
-                    android:icon="@drawable/ic_baseline_login_24"
-                    android:title="Logout" />
-            </group>
-        </menu>
-    </item>
-
-<!--    <item android:title="Tie Up">-->
-<!--        <menu>-->
-<!--            <group android:checkableBehavior="single">-->
-<!--                <item-->
-<!--                    android:id="@+id/tie"-->
-<!--                    android:icon="@drawable/tie"-->
-<!--                    android:title="Tie Up with Us" />-->
-<!--            </group>-->
-<!--        </menu>-->
-<!--    </item>-->
-
-<!--    <item android:title="Communication">-->
-<!--        <menu>-->
-<!--            <group android:checkableBehavior="single">-->
-<!--                <item-->
-<!--                    android:id="@+id/feedback"-->
-<!--                    android:icon="@drawable/feedback"-->
-<!--                    android:title="Feedback" />-->
-<!--                <item-->
-<!--                    android:id="@+id/help"-->
-<!--                    android:icon="@drawable/help"-->
-<!--                    android:title="Help Center" />-->
-<!--                <item-->
-<!--                    android:id="@+id/term"-->
-<!--                    android:icon="@drawable/term"-->
-<!--                    android:title="Term &#38; Condition" />-->
-<!--            </group>-->
-<!--        </menu>-->
-<!--    </item>-->
-
-<!--    <item android:title="Privacy Policy">-->
-<!--        <menu>-->
-<!--            <group android:checkableBehavior="single">-->
-<!--                <item-->
-<!--                    android:id="@+id/policy"-->
-<!--                    android:icon="@drawable/policy"-->
-<!--                    android:title="Privacy &#38; Policy" />-->
-<!--            </group>-->
-<!--        </menu>-->
-<!--    </item>-->
-
 </menu>

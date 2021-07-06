@@ -38,6 +38,7 @@ public class phoneActivity extends AppCompatActivity {
                 Intent intent = new Intent(getApplicationContext(), OTPActivity.class);
                 intent.putExtra("PhoneNo", mobileNo);
                 startActivity(intent);
+                finish();
             }
         });
 

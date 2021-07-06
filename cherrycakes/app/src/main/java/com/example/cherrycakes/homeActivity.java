@@ -11,6 +11,7 @@ import androidx.fragment.app.FragmentTransaction;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.FrameLayout;
@@ -28,7 +29,8 @@ public class homeActivity extends AppCompatActivity implements NavigationView.On
     DrawerLayout drawerLayout;
     NavigationView navigationView;
     ImageView navigation_bar;
-
+    private long backPresed;
+    ImageView round,vegetable,cartnav,cooking,grooming,dryfruits,nonveg,dailyessential;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,10 +40,20 @@ public class homeActivity extends AppCompatActivity implements NavigationView.On
         navigationView = findViewById(R.id.navigation_view);
         drawerLayout = findViewById(R.id.drawerLayout);
         navigation_bar = findViewById(R.id.nav_bar);
+        round = findViewById(R.id.fruits);
 
         navigationDrawer();
 
+        round.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(homeActivity.this, RoundcakesActivity.class);
+                startActivity(intent);
+            }
+        });
+
     }
+
 
     private void navigationDrawer() {
         navigationView.bringToFront();
@@ -61,9 +73,16 @@ public class homeActivity extends AppCompatActivity implements NavigationView.On
     public void onBackPressed() {
         if (drawerLayout.isDrawerVisible(GravityCompat.START)) {
             drawerLayout.closeDrawer(GravityCompat.START);
-        } else
+        }
+
+        if(backPresed + 2000 > System.currentTimeMillis()){
             super.onBackPressed();
-        super.onBackPressed();
+            return;
+        }
+        else {
+            Toast.makeText(this, "Press Back Again To Exit", Toast.LENGTH_SHORT).show();
+        }
+        backPresed = System.currentTimeMillis();
     }
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
