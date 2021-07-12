@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.cherrycakes">
 
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
@@ -11,7 +13,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Cherrycakes">
-        <activity android:name=".locationActivity"></activity>
+        <activity android:name=".PaymentActivity" />
+        <activity android:name=".edit_profile_Activity" />
+        <activity android:name=".Profile_Activity" />
+        <activity android:name=".locationActivity" />
         <activity android:name=".item_details_Activity" />
         <activity android:name=".fruit_cake_Activity" />
         <activity android:name=".sponge_cake_Activity" />

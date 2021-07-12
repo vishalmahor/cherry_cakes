@@ -7,21 +7,9 @@
             android:icon="@drawable/ic_baseline_home_24"
             android:title="Dashboard" />
         <item
-            android:id="@+id/search"
-            android:icon="@drawable/ic_baseline_search_24"
-            android:title="Search" />
-        <item
-            android:id="@+id/cart"
-            android:icon="@drawable/ic_baseline_shopping_cart_24"
-            android:title="My Cart" />
-        <item
-            android:id="@+id/favourate"
-            android:icon="@drawable/ic_baseline_person_24"
-            android:title="Favourate Items" />
-        <item
             android:id="@+id/notification"
             android:icon="@drawable/ic_baseline_person_24"
-            android:title="My message" />
+            android:title="My Notifications" />
         <item
             android:id="@+id/account"
             android:icon="@drawable/ic_baseline_notifications_active_24"

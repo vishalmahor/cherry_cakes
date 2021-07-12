@@ -43,7 +43,7 @@
             android:textColor="@color/black"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:text="Round Shape Cakes"
+            android:text="Anniversary Cakes"
             android:textSize="25dp"
             android:textStyle="bold"/>
 

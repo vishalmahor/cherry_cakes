@@ -1,8 +1,5 @@
 package com.example.cherrycakes;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -12,6 +9,9 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -37,6 +37,14 @@ public class signupActivity extends AppCompatActivity {
         cpassword = findViewById(R.id.txt_cpassword);
         go_to_login = findViewById(R.id.go_to_login);
         imageView = findViewById(R.id.imageView2);
+
+        go_to_login.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(signupActivity.this, LoginActivity.class);
+                startActivity(intent);
+            }
+        });
 
         imageView.setOnClickListener(new View.OnClickListener() {
             @Override
