@@ -47,7 +47,7 @@ public class homeActivity extends AppCompatActivity implements NavigationView.On
     TextView location,loc;
     DrawerLayout drawerLayout;
     NavigationView navigationView;
-    ImageView navigation_bar,carts,locationIcon;
+    ImageView navigation_bar,carts,locationIcon,shopping;
     private long backPresed;
     ImageView round,heart,square,photo,customize,chocolate,red,sponge,fruit;
     FusedLocationProviderClient fusedLocationProviderClient;
@@ -62,6 +62,7 @@ public class homeActivity extends AppCompatActivity implements NavigationView.On
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
+        shopping = findViewById(R.id.shopping_bag);
         locationIcon = findViewById(R.id.locationIcon);
         carts = findViewById(R.id.shopping_bag);
         location = findViewById(R.id.location_bar);
@@ -80,6 +81,16 @@ public class homeActivity extends AppCompatActivity implements NavigationView.On
         GridLayoutManager gridLayoutManager = new GridLayoutManager(this, 2);
         recyclerView.setLayoutManager(gridLayoutManager);
         list = new ArrayList<DataSet>();
+        searchView = findViewById(R.id.search_view_bar);
+
+
+        shopping.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(homeActivity.this, OrderActivity.class);
+                startActivity(intent);
+            }
+        });
 
         locationIcon.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -88,6 +99,7 @@ public class homeActivity extends AppCompatActivity implements NavigationView.On
                 startActivity(intent);
             }
         });
+
 
 
         databaseReference = FirebaseDatabase.getInstance().getReference().child("home_screen_cakes/home_screen_cakes");
@@ -239,6 +251,10 @@ public class homeActivity extends AppCompatActivity implements NavigationView.On
         }
         if(id == R.id.account) {
             Intent intent = new Intent(homeActivity.this, Profile_Activity.class);
+            startActivity(intent);
+        }
+        if(id == R.id.orders) {
+            Intent intent = new Intent(homeActivity.this, OrderActivity.class);
             startActivity(intent);
         }
         if(id == R.id.exit) {

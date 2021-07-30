@@ -13,12 +13,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Cherrycakes">
+        <activity android:name=".SearchActivity"></activity>
+        <activity android:name=".ForgetActivity" />
+        <activity android:name=".OrderActivity" />
         <activity android:name=".PaymentActivity" />
         <activity android:name=".edit_profile_Activity" />
         <activity android:name=".Profile_Activity" />
         <activity android:name=".locationActivity" />
         <activity android:name=".item_details_Activity" />
-        <activity android:name=".fruit_cake_Activity" />
         <activity android:name=".sponge_cake_Activity" />
         <activity android:name=".Red_velvet_cake_Activity" />
         <activity android:name=".customize_cakes_Activity" />

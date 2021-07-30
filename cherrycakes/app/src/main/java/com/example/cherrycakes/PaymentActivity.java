@@ -14,12 +14,21 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
 import java.util.ArrayList;
 
 public class PaymentActivity extends AppCompatActivity {
 
     EditText name,price,note;
     Button send;
+    FirebaseDatabase firebaseDatabase;
+    FirebaseUser firebaseUser;
+    DatabaseReference databaseReference;
+    String uid;
 
     final int UPI_PAYMENT = 0;
 
@@ -47,7 +56,7 @@ public class PaymentActivity extends AppCompatActivity {
                 String amount = price.getText().toString();
                 String note1 = note.getText().toString();
                 String name1 = name.getText().toString();
-                String upiId = "9889285127@paytm";
+                String upiId = "7033034637@apl";
                 payUsingUpi(amount, upiId, name1, note1);
             }
         });
@@ -137,6 +146,7 @@ public class PaymentActivity extends AppCompatActivity {
                 //Code to handle successful transaction here.
                 Toast.makeText(PaymentActivity.this, "Transaction successful.", Toast.LENGTH_SHORT).show();
                 Log.d("UPI", "responseStr: "+approvalRefNo);
+                orderedItems();
             }
             else if("Payment cancelled by user.".equals(paymentCancel)) {
                 Toast.makeText(PaymentActivity.this, "Payment cancelled by user.", Toast.LENGTH_SHORT).show();
@@ -147,6 +157,32 @@ public class PaymentActivity extends AppCompatActivity {
         } else {
             Toast.makeText(PaymentActivity.this, "Internet connection is not available. Please check and try again", Toast.LENGTH_SHORT).show();
         }
+    }
+
+    private void orderedItems() {
+
+        send.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                firebaseDatabase = FirebaseDatabase.getInstance();
+                databaseReference = firebaseDatabase.getReference("Users");
+
+                String Name11 = name.getText().toString().trim();
+                String Email11 = price.getText().toString().trim();
+                String Mobile11 = note.getText().toString().trim();
+                firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
+//                get UID
+                uid = firebaseUser.getUid();
+
+                userHelperclass1 helperClass = new userHelperclass1(Name11, Email11 ,Mobile11);
+                databaseReference.child(uid).setValue(helperClass);
+                Toast.makeText(PaymentActivity.this, "Data Save Successfully", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(getApplicationContext(), Profile_Activity.class);
+                startActivity(intent);
+                finish();
+            }
+        });
+
     }
 
     public static boolean isConnectionAvailable(Context context) {

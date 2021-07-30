@@ -21,7 +21,7 @@ public class LoginActivity extends AppCompatActivity {
 
     Button btn_login;
     EditText email, password;
-    TextView go_to_register;
+    TextView go_to_register,forget;
     private FirebaseAuth firebaseAuth;
 
     @Override
@@ -29,10 +29,19 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
+        forget= findViewById(R.id.forget);
         go_to_register = findViewById(R.id.go_to_register);
         btn_login = findViewById(R.id.btn_login);
         email = findViewById(R.id.txt_emails);
         password = findViewById(R.id.txt_passwords);
+
+        forget.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(LoginActivity.this, ForgetActivity.class);
+                startActivity(intent);
+            }
+        });
 
         go_to_register.setOnClickListener(new View.OnClickListener() {
             @Override

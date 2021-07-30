@@ -36,7 +36,7 @@ public class grid_postAdapter extends RecyclerView.Adapter<grid_postAdapter.MyVi
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
         holder.name.setText(dataSet.get(position).getName());
-        holder.price.setText(dataSet.get(position).getPrice() + " ");
+        holder.price.setText(dataSet.get(position).getPrice()+"");
         Picasso.get().load(dataSet.get(position).getImage()).into(holder.image);
         holder.view.setVisibility(View.VISIBLE);
         holder.onClick(position);
@@ -66,11 +66,10 @@ public class grid_postAdapter extends RecyclerView.Adapter<grid_postAdapter.MyVi
             view.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Toast.makeText(context, "Redirecting to Details", Toast.LENGTH_SHORT).show();
-                    Intent intent = new Intent(context, item_details_Activity.class);
+                    Toast.makeText(context, "Pay using UPI secure and safe", Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(context, PaymentActivity.class);
                     intent.putExtra("name", dataSet.get(position).getName());
-                    intent.putExtra("price", dataSet.get(position).getPrice());
-                    intent.putExtra("image", dataSet.get(position).getImage());
+                    intent.putExtra("price", dataSet.get(position).getPrice()).toString();
                     context.startActivity(intent);
                 }
             });

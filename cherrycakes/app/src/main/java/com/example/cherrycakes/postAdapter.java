@@ -5,7 +5,6 @@ import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -37,7 +36,7 @@ public class postAdapter extends RecyclerView.Adapter<postAdapter.MyViewHolder> 
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
         holder.name.setText(dataSet.get(position).getName());
-        holder.price.setText(dataSet.get(position).getPrice() + " ");
+        holder.price.setText(dataSet.get(position).getPrice()+"");
         Picasso.get().load(dataSet.get(position).getImage()).into(holder.image);
         holder.view.setVisibility(View.VISIBLE);
         holder.onClick(position);
@@ -52,7 +51,6 @@ public class postAdapter extends RecyclerView.Adapter<postAdapter.MyViewHolder> 
 
         TextView name, price;
         ImageView image;
-        Button btn_upi;
         View view;
 
 

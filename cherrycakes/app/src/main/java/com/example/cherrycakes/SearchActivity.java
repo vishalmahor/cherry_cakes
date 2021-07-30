@@ -3,7 +3,6 @@ package com.example.cherrycakes;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Toast;
 
@@ -20,26 +19,26 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 
-public class fruit_cake_Activity extends AppCompatActivity {
+public class SearchActivity extends AppCompatActivity {
+
     ImageView back;
     RecyclerView recyclerView;
     DatabaseReference databaseReference;
     ArrayList<DataSet> list;
     postAdapter adapter;
-    Button add_to_cart;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_fruit_cake_);
+        setContentView(R.layout.activity_search);
 
-        back = findViewById(R.id.backtodashboard);
+        back = findViewById(R.id.back_to_home_from_search);
         recyclerView = findViewById(R.id.recycler);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         list = new ArrayList<DataSet>();
 
 
-        databaseReference = FirebaseDatabase.getInstance().getReference().child("horizontal_scroll_view_cakes/fruit_cake");
+        databaseReference = FirebaseDatabase.getInstance().getReference().child("home_screen_cakes/home_screen_cakes");
         databaseReference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
@@ -49,27 +48,26 @@ public class fruit_cake_Activity extends AppCompatActivity {
                     DataSet d = dataSnapshot1.getValue(DataSet.class);
                     list.add(d);
                 }
-                adapter = new postAdapter(fruit_cake_Activity.this,list);
+                adapter = new postAdapter(SearchActivity.this,list);
                 recyclerView.setAdapter(adapter);
             }
 
 
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
-                Toast.makeText(fruit_cake_Activity.this, "Opsss.... Something is wrong", Toast.LENGTH_SHORT).show();
+                Toast.makeText(SearchActivity.this, "Opsss.... Something is wrong", Toast.LENGTH_SHORT).show();
             }
         });
+
+
 
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(fruit_cake_Activity.this, homeActivity.class);
+                Intent intent = new Intent(SearchActivity.this, homeActivity.class);
                 startActivity(intent);
             }
         });
 
-
     }
-
-
 }

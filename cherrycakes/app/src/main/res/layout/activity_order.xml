@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fruit_cake_Activity"
+    tools:context=".OrderActivity"
     android:background="@color/white">
 
     <LinearLayout
@@ -43,11 +43,24 @@
             android:textColor="@color/black"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:text="Fruit Cake"
+            android:text="Your Ordered Cakes"
             android:textSize="25dp"
             android:textStyle="bold"/>
 
     </LinearLayout>
+
+    <TextView
+        android:textColor="@color/black"
+        android:id="@+id/blank"
+        android:textSize="15dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Opps.. Not Order Anything Yet."
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycler"
