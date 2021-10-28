@@ -1,8 +1,0 @@
-<<<<<<< HEAD
-# hello tanzanite ....
-=======
-
-# raushan
-
-Animesh
->>>>>>> e116d094ff7045a284500577aea59672d3af1176
